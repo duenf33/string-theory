@@ -143,15 +143,15 @@ reverse('mesuara');
 //   return vowels;
 // }
 function onlyVowels(input) {
-  let inVowels = input.length;
-  // let inLoop = inVowels.toLowerCase();
+  // console.log(input)
+  let inputVow = input.toLowerCase();
+  // console.log(inputVow)
   let vowels = 1;
   let i = 0;
   let str = '';
-  while(i < inVowels && vowels < 6) {
+  while(i < inputVow.length && vowels < 6) {
       if(input[i] == 'a' || input[i] == 'e' || input[i] == 'i' || input[i] == 'o' || input[i] == 'u') {
       str += input[i];
-      // console.log(input[i]);
       vowels++ 
       }
   i++
@@ -175,10 +175,31 @@ function crazyCase(input){
 }
 // let result = crazyCase('hello');
 // let result = crazyCase('multiple words here');
-let result = crazyCase('YELLING');
+// let result = crazyCase('YELLING');
+// result;
+
+function titleCase(input){
+  let str = '';
+  for(let i = 0; i < input.length; i++){
+    str += input[i];
+  }
+  return str;
+}
+// let result = titleCase('return of the king');
+// let result = titleCase('cOde immerSives');
+// result;
+
+function camelCase(input){
+  let str = '';
+  for(let i = 0; i < input.length; i++){
+    str += input[i];
+  }
+  return str.split(' ').join('');
+}
+// let result = camelCase('oh Hello');
+let result = camelCase('well yeah of course');
+// let result = camelCase('Boy howdy');
 result;
-
-
 
 /********************************************
  * CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
