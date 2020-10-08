@@ -34,7 +34,7 @@ yellingChars('oh hello');
 function indexedChars(input){
   let str = '';
   for(let i = 0; i < input.length; i++){
-    str += str.indexOf(str[i]) + input[i]; 
+    str += i + input[i]; 
   }
   return str;
 }
@@ -44,7 +44,7 @@ indexedChars('hello');
 indexedChars('bye');
 
 
-function numberedChars(input){
+function numberedChars(input){  //xxx
   let str = '';
   for(let i = 0; i < input.length; i++){
     let numb = '(' + str.indexOf(str[i]) + ')';
@@ -57,7 +57,7 @@ function numberedChars(input){
 numberedChars('hello');
 numberedChars('bye');
 
-function exclaim(input){
+function exclaim(input){   // xxx
   let str = '';
   for(let i = 0; i < input.length; i++){
     str = str.replace('?', '!') + input[i];
@@ -91,8 +91,11 @@ repeatIt('oh hi!', 8);
 //   }
 //   return str;
 // }
-function truncate(input){
+function truncate(input){   //xxx
   let str = input.indexOf('', 15);
+  if(input.length < 18){
+    return input;
+  }
     if(str == -1)
       return input;
   return input.substring(0, str) + '...';
@@ -120,10 +123,14 @@ ciEmailify('Anthony DeRosa');
 function reverse(input){
   let str = '';
   for(let i = 0; i < input.length; i++){
-    str += input[i];
+    str = input[i] + str;
   }
-  return str.toLowerCase().split('').reverse().join('');
+  return str;
+  
+  // return str.toLowerCase().split('').reverse().join('');
 }
+// they both work.
+
 // let result = reverse('colin');
 // let result = reverse('mesuara');
 // result;
@@ -200,6 +207,9 @@ function camelCase(input){
 let result = camelCase('well yeah of course');
 // let result = camelCase('Boy howdy');
 result;
+camelCase('oh Hello');
+camelCase('well yeah of course');
+camelCase('Boy howdy');
 
 /********************************************
  * CODE DOWN HERE IS FOR INTERNAL USE ONLY. *
